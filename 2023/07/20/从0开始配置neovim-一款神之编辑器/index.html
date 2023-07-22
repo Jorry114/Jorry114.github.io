@@ -15,7 +15,7 @@
   
 
   
-    <meta name="author" content="Cxy">
+    <meta name="author" content="JorryJo">
   
 
   
@@ -104,10 +104,15 @@
         <div class="layout-margin">
           <h1 class="title-wrap">从0开始配置neovim--一款神之编辑器</h1>
           <h2 class="title-sub-wrap">
-            <strong>Cxy</strong>
+            <strong>JorryJo</strong>
             <span>发布于</span>
             <time  class="article-date" datetime="2023-07-20T00:33:59.000Z" itemprop="datePublished">2023-07-20</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2023-07-22T12:33:01.663Z" itemprop="dateUpdated">2023-07-22</time>
+            </h2>
           
           
           <ul class="wrap-list dark">
@@ -139,19 +144,47 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <pre><code>我做这件事本就没有意义，活着就得这样，不能什么都追求个意义，给世界宇宙和你都留点隐私是很有必要的。
-我的图文教程就拿最没有意义的事，我坚持了6个月的烂活开始讲起。
-Neovim
-vim作为一个非常古老的文本编辑器，是neovim的爹，因为社区的活跃出现了各式各样的插件和种类而焕发生机。
-可玩性很高，客制化程度相当高,因为技术的迭代更新，从而出现了新时代的vim——neovim，一款基于vim又高于vim的新版vim。也是今天要讲解的主角
-0.配置文件
-跟别的编辑器不一样，vim或者neovim是没有图形化的编辑界面的，也就是说你基本每一步改动都要在代码或命令行里进行，需要一定的计算机基础和编程基础，否则理解起来会很困难
-1.插件管理器
-如此庞大的插件市场首先就是要解决下载使用管理这三大基本的问题，对于neovim，有很多的选择，例如packer，lazy，因为我当时看的教程比较老，所以用的是不那么方便的packer
-假设你需要使用neovim，我的建议是你去用lazy，这个插件管理系统比packer有序的多，且下载简单，有更美观的图形化界面。
-以下我以packer为例子，讲述如何在windows下使用neovim并安装Packer。
-</code></pre>
+        <p>我做这件事本就没有什么意义，活着就得这样，不能什么都追求要有个意义，给世界宇宙和你自己留点隐私是有必要的,<br>    但不是不去追求真理，<br>    世界给了你一扇窗要的是让你一点一点地窥探蓝天，而不是一眼就窥见全貌。<br>    我的图文教程就拿最没有意义的事，我整了6个月的活开始讲起。</p>
+<h1 id="Neovim"><a href="#Neovim" class="headerlink" title="Neovim"></a>Neovim</h1><p>vim作为一个非常古老的文本编辑器，是neovim的亲爹，因为社区的活跃出现了各式各样的插件和种类而焕发生机。<br>可玩性很高，客制化程度相当高,因技术的迭代更新，出现了新时代的vim——neovim，<br>    一款基于vim又高于vim的新版vim。也是今天要讲解的主角</p>
+<h3 id="0-下载安装"><a href="#0-下载安装" class="headerlink" title="0.下载安装"></a>0.下载安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/neovim/neovim">neovim官方文档</a>，<a target="_blank" rel="noopener" href="https://github.com/neovim/neovim/releases">下载地址</a>,<br>同一个版本说明的下方有个Assets，拉开选择最新版的windows安装包进行下载，</p>
+<h3 id="1-创建配置文件"><a href="#1-创建配置文件" class="headerlink" title="1.创建配置文件"></a>1.创建配置文件</h3><p>跟某些v字开头的浏览器编辑器不一样，vim或者neovim是没有图形化的编辑界面的，<br>    也就是说你基本每一步改动都要在代码或命令行里进行，需要一定的计算机基础和编程基础，<br>    否则理解起来会很困难,最好能够熟悉命令行和lua语言，大部分的工作用到命令行会简单很多，<br>    本文的配置皆使用lua语言。<br>    在windows下，neovim的配置文件存放在</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\nvim</span><br></pre></td></tr></table></figure>
+<p>这个目录下<br>    假设没有这个文件夹你可以自行创建，<br>    顺便提一句，在linux下配置的neovim直接把配置抄到windows下是基本可行的，<br>    除了彩虹括号插件之外都没有出什么大问题。<br>    首先你要做的就是在</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\nvim</span><br></pre></td></tr></table></figure>
+<p>下创建一个<strong>init.lua</strong>文件，这里要把文件扩展名打开，后缀一定要改成lua，这是第一步，<br>    其次就是插件列表和个人的配置列表，我建议都使用一个文件夹来管理，在C:\Users\Administrator\AppData\Local\nvim下新建名为lua（叫什么都可以）的文件夹，<br>    在其中再次新建core及plugin文件夹，core用于存放配置文件，plugin用于存放插件的配置文件和下载程序。</p>
+<h3 id="2-安装插件管理器"><a href="#2-安装插件管理器" class="headerlink" title="2.安装插件管理器"></a>2.安装插件管理器</h3><p>如此庞大的插件市场首先就是要解决下载使用管理这三大基本的问题，对于neovim，有很多的选择，例如<br>packer，lazy，因为我当时看的教程比较老，所以用的是不那么方便的packer<br>假设你需要使用neovim，我的建议是你去用lazy，这个插件管理系统比packer有序的多，且下载简单，有更<br>美观的图形化界面。<br>以下我以Packer为例子，讲述如何在windows下安装Packer。</p>
+<h5 id="1-安装git"><a href="#1-安装git" class="headerlink" title="(1)安装git"></a>(1)安装git</h5><p>这个很简单，到<a target="_blank" rel="noopener" href="https://git-scm.com/">git官网</a>下载安装即可。</p>
+<h5 id="2-克隆仓库"><a href="#2-克隆仓库" class="headerlink" title="(2)克隆仓库"></a>(2)克隆仓库</h5><p>有了git以后我们可以使用git clone指令，在任意位置右键鼠标，选择git bash here，后在命令行输入这<br>一段命令    </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/wbthomason/packer.nvim &quot;$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这就算是装好了，最后附上<a target="_blank" rel="noopener" href="https://github.com/wbthomason/packer.nvim">packer仓库地址</a>，怎么使用去<strong>看文档看文档看文档</strong>。</p>
+<h3 id="或者还有一种更简单的方法，假设你无法使用git，你可以直接复制我的配置文件，即开即用。"><a href="#或者还有一种更简单的方法，假设你无法使用git，你可以直接复制我的配置文件，即开即用。" class="headerlink" title="或者还有一种更简单的方法，假设你无法使用git，你可以直接复制我的配置文件，即开即用。"></a>或者还有一种更简单的方法，假设你无法使用git，你可以直接复制我的配置文件，即开即用。</h3><p>我的配置文件地址在<a target="_blank" rel="noopener" href="https://gitee.com/jorryjo/new-configruation">这里</a>,把这个文件下载下来，然后直接解压到</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\nvim</span><br></pre></td></tr></table></figure>
+<p>用neovim进入该文件下的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\lua\plugins\plugins-setup.lua</span><br></pre></td></tr></table></figure>
+<p>按下回车，等待配置安装完成即可。<br>你可能会需要neovide，这个我下一篇文章会说。</p>
+<h5 id="3-必备插件"><a href="#3-必备插件" class="headerlink" title="(3).必备插件"></a>(3).必备插件</h5><p>每一个人的习惯不一样，我个人觉得颜值即正义，所以我的配置文件实用性不高，观赏性高点，<br>这里我推荐几个好看好用的插件。</p>
+<h6 id="dashboard"><a href="#dashboard" class="headerlink" title="dashboard"></a>dashboard</h6><p><a target="_blank" rel="noopener" href="https://github.com/nvimdev/dashboard-nvim">官方文档</a>，是国人glepnir写的，本人非常佩服他。<br>是一个开屏的插件，就是能够给你的neovim一个更好看的首页。<br>我建议搭配alpha插件使用，<a target="_blank" rel="noopener" href="https://github.com/goolord/alpha-nvim">官方文档</a>,基于dashboard的主题，可以自定义开屏图标，但需是ascii码，我推荐几个常用的图片转ascii码的网站<br><a target="_blank" rel="noopener" href="https://fsymbols.com/text-art/">https://fsymbols.com/text-art/</a><br><a target="_blank" rel="noopener" href="https://manytools.org/hacker-tools/image-to-byte-array/">https://manytools.org/hacker-tools/image-to-byte-array/</a><br><a target="_blank" rel="noopener" href="https://vj-duardo.github.io/Braille-Art/">https://vj-duardo.github.io/Braille-Art/</a><br><a target="_blank" rel="noopener" href="https://lachlanarthur.github.io/Braille-ASCII-Art/">https://lachlanarthur.github.io/Braille-ASCII-Art/</a><br>都挺好的。</p>
+<h6 id="Alpha"><a href="#Alpha" class="headerlink" title="Alpha"></a>Alpha</h6><p><a target="_blank" rel="noopener" href="https://github.com/goolord/alpha-nvim">官方文档</a>，就是上文我所说的，有很多可以自定的地方，详细的还是得自己去看文档。</p>
+<h6 id="Autoparis"><a href="#Autoparis" class="headerlink" title="Autoparis"></a>Autoparis</h6><p><a target="_blank" rel="noopener" href="https://github.com/windwp/nvim-autopairs">官方文档</a>，一款能够自动补全另一半(括号)的插件，配置文件我也没有做什么改动，直接用官方的默认配置或者去抄我的配置文件。</p>
+<h5 id="treesitter"><a href="#treesitter" class="headerlink" title="treesitter"></a>treesitter</h5><p><a target="_blank" rel="noopener" href="https://github.com/nvim-treesitter/nvim-treesitter">官方文档</a>，更高级的代码高亮，直接默认配置，或者去抄我的配置文件。</p>
+<h2 id="最后附上几张我的nvim样式截图。"><a href="#最后附上几张我的nvim样式截图。" class="headerlink" title="最后附上几张我的nvim样式截图。"></a>最后附上几张我的nvim样式截图。</h2>
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64b94ec41ddac507cce0ffd4.png" alt="聚合图床真的是解决了我的燃眉之急" loading="lazy" />
+      <figcaption>聚合图床真的是解决了我的燃眉之急</figcaption>
+    </figure>
+  
 
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64b94fb51ddac507cce5986d.png" alt="后续更新换成了staline" loading="lazy" />
+      <figcaption>后续更新换成了staline</figcaption>
+    </figure>
+  
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64b94fcb1ddac507cce604fd.png" alt="开屏/alpha页" loading="lazy" />
+      <figcaption>开屏/alpha页</figcaption>
+    </figure>
+  
       </section>
 
       
@@ -207,7 +240,7 @@ vim作为一个非常古老的文本编辑器，是neovim的爹，因为社区�
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>2</span>
+        <span>3</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -282,7 +315,7 @@ vim作为一个非常古老的文本编辑器，是neovim的爹，因为社区�
       
     </div>
      
-    <p>&copy; 2023 <a href="/" target="_blank">Cxy</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">JorryJo</a></p>
 
     
 
