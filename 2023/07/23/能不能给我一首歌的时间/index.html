@@ -15,14 +15,14 @@
   
 
   
-    <meta name="author" content="JorryJo">
+    <meta name="author" content="cxy">
   
 
   
 
   
 
-  <title>听首歌 | JorryJo</title>
+  <title>能不能给我一首歌的时间 | JorryJo</title>
 
   
 
@@ -102,12 +102,17 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">听首歌</h1>
+          <h1 class="title-wrap">能不能给我一首歌的时间</h1>
           <h2 class="title-sub-wrap">
-            <strong>JorryJo</strong>
+            <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-23T00:57:30.000Z" itemprop="datePublished">2023-07-23</time>
+            <time  class="article-date" datetime="2023-07-23T12:40:35.000Z" itemprop="datePublished">2023-07-23</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2023-07-23T16:03:31.739Z" itemprop="dateUpdated">2023-07-24</time>
+            </h2>
           
           
           <ul class="wrap-list dark">
@@ -137,7 +142,47 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="aplayer-box" data-url='https://www.joy127.com/url/106184.mp3' data-name='Shelter' data-artist='hakaisu，Alys' data-cover='https://pic.imgdb.cn/item/64bc87ee1ddac507cc263819.png' ></div>
+        <div class="aplayer-box" data-url='https://www.joy127.com/url/106234.mp3' data-name='单车' data-artist='陈奕迅' data-cover='https://pic.imgdb.cn/item/64bd20b91ddac507ccb40821.webp' ></div>
+<h1 id="一些稍微有用的项目"><a href="#一些稍微有用的项目" class="headerlink" title="一些稍微有用的项目"></a>一些稍微有用的项目</h1><h3 id="全自动二次函数解析-图像生成"><a href="#全自动二次函数解析-图像生成" class="headerlink" title="全自动二次函数解析&amp;图像生成"></a>全自动二次函数解析&amp;图像生成</h3><p>顾名思义，就是一个能够根据你输入的一次项，二次项系数和常数项生成相对应的解析（delta，与x轴的交点），并生成图像。</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bd2de41ddac507cce0d03b.png" alt="大致的效果" loading="lazy" />
+      <figcaption>大致的效果</figcaption>
+    </figure>
+  
+<p>具体的代码实现（少数的我写了注释的代码），需要matplotlib，numpy这两个库，22年写的应该是。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">import math</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [&#x27;SimHei&#x27;]  # 用来正常显示中文标签</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False  # 用来正常显示负号</span><br><span class="line">x = np.arange(-10, 10, 0.1)</span><br><span class="line">A = int(input(&#x27;二次项系数&#x27;))</span><br><span class="line">B = int(input(&#x27;一次项系数&#x27;))</span><br><span class="line">C = int(input(&#x27;常数项&#x27;))</span><br><span class="line"># 查成分</span><br><span class="line">if A &lt; 0:</span><br><span class="line">    print(&quot;开口向下&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;开口向上&quot;)</span><br><span class="line">DingX = B/-2*A</span><br><span class="line">DingY = 4*A*C - B * B / 4 * A</span><br><span class="line"># 画出成分</span><br><span class="line">print(DingX, DingY)</span><br><span class="line">y = A * x * x + B * x + C</span><br><span class="line">plt.xlabel(&#x27;x&#x27;)</span><br><span class="line">plt.ylabel(&#x27;y&#x27;)</span><br><span class="line">plt.title(&quot;一元二次函数&quot;)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片转彩色字符画"><a href="#图片转彩色字符画" class="headerlink" title="图片转彩色字符画"></a>图片转彩色字符画</h3><p>说实话我自己也没绷住，这个属于是最没用的<br>灰白的尚且有些意义，加了彩色是脱裤子放屁。</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bd30a01ddac507cce8a6cc.png" alt="原图我觉得不用放了，一眼仙贝" loading="lazy" />
+      <figcaption>原图我觉得不用放了，一眼仙贝</figcaption>
+    </figure>
+  
+<p>代码实现，需要opencv这个库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">charSize = <span class="number">2</span>  <span class="comment"># 字符尺寸</span></span><br><span class="line"></span><br><span class="line">string = <span class="string">&quot;随便&#x27;&quot;</span></span><br><span class="line">count = <span class="built_in">len</span>(string)</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;3.jpg&#x27;</span>)</span><br><span class="line">u, v, _ = img.shape</span><br><span class="line">c = img*<span class="number">0</span> + <span class="number">255</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, u, <span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, v, <span class="number">6</span>):</span><br><span class="line">        pix = gray[i, j]</span><br><span class="line">        b, g, r = img[i, j]</span><br><span class="line">        zifu = string[<span class="built_in">int</span>(((count - <span class="number">1</span>) * pix) / <span class="number">256</span>)]</span><br><span class="line">        cv2.putText(c, zifu, (j, i), cv2.FONT_HERSHEY_COMPLEX,</span><br><span class="line">                    charSize, (<span class="built_in">int</span>(b), <span class="built_in">int</span>(g), <span class="built_in">int</span>(r)), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;output.png&#x27;</span>, c)</span><br></pre></td></tr></table></figure>
+<h3 id="素描化图片"><a href="#素描化图片" class="headerlink" title="素描化图片"></a>素描化图片</h3><p>这个效果好，做遗照相当合适（</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bd45b61ddac507cc2dd0d4.jpg" alt="渲染花了0.114514s" loading="lazy" />
+      <figcaption>渲染花了0.114514s</figcaption>
+    </figure>
+  
+<p>代码实现<br>需要pillow，numpy两个库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.asarray(Image.<span class="built_in">open</span>(<span class="string">&quot;3.jpg&quot;</span>).convert(<span class="string">&quot;L&quot;</span>)).astype(<span class="string">&quot;float&quot;</span>)</span><br><span class="line">depth=<span class="number">10</span><span class="comment">#深度的范围为0~100，我们先取10这个数</span></span><br><span class="line">grad = np.gradient(a) <span class="comment">#取图像灰度的梯度值，有两个</span></span><br><span class="line">grad_x, grad_y = grad               <span class="comment">#分别取横纵图像梯度值</span></span><br><span class="line"><span class="comment">#将高度融入纵横梯度当中，也可以理解让梯度变化不那么明显</span></span><br><span class="line">grad_x = grad_x*depth/<span class="number">100.</span></span><br><span class="line">grad_y = grad_y*depth/<span class="number">100.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">A = np.sqrt(grad_x**<span class="number">2</span> + grad_y**<span class="number">2</span> + <span class="number">1.</span>)</span><br><span class="line">uni_x = grad_x/A</span><br><span class="line">uni_y = grad_y/A</span><br><span class="line">uni_z = <span class="number">1.</span>/A</span><br><span class="line"><span class="comment">#设定了一个光源点，知道角度，来算出单位的x,y,z的长度</span></span><br><span class="line">vec_el = np.pi/<span class="number">2.2</span>                   <span class="comment"># 光源的俯视角度，弧度值</span></span><br><span class="line">vec_az = np.pi/<span class="number">4.</span>                    <span class="comment"># 光源的方位角度，弧度值</span></span><br><span class="line">dx = np.cos(vec_el)*np.cos(vec_az)   <span class="comment">#光源对x 轴的影响</span></span><br><span class="line">dy = np.cos(vec_el)*np.sin(vec_az)   <span class="comment">#光源对y 轴的影响</span></span><br><span class="line">dz = np.sin(vec_el)              <span class="comment">#光源对z 轴的影响</span></span><br><span class="line"><span class="comment">#光源归一化</span></span><br><span class="line">b = <span class="number">255</span>*(dx*uni_x + dy*uni_y + dz*uni_z)   </span><br><span class="line">b = b.clip(<span class="number">0</span>,<span class="number">255</span>)</span><br><span class="line"> </span><br><span class="line">im = Image.fromarray(b.astype(<span class="string">&#x27;uint8&#x27;</span>))  <span class="comment">#重构图像</span></span><br><span class="line">im.save(<span class="string">&#x27;6sav.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="QQ信息轰炸"><a href="#QQ信息轰炸" class="headerlink" title="QQ信息轰炸"></a>QQ信息轰炸</h3><p>看名字就知道了，需要pynput这个库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynput.mouse <span class="keyword">import</span> Button, Controller <span class="keyword">as</span> mouse_Controller</span><br><span class="line"><span class="keyword">from</span> pynput.keyboard <span class="keyword">import</span> Key, Controller <span class="keyword">as</span> key_Controller</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br><span class="line">mouse = mouse_Controller()  <span class="comment"># 控制鼠标</span></span><br><span class="line">keyboard = key_Controller()</span><br><span class="line">mouse.press(Button.left)  <span class="comment"># 按住鼠标左键</span></span><br><span class="line">mouse.release(Button.left)  <span class="comment"># 松开鼠标左键</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>):  <span class="comment">#总共发多少次</span></span><br><span class="line">    time.sleep(<span class="number">0.1</span>) <span class="comment">#消息发送间隔时间</span></span><br><span class="line">    keyboard.<span class="built_in">type</span>(<span class="string">&#x27;cnm&#x27;</span>)  <span class="comment">#发送的消息内容,不一定要c他m</span></span><br><span class="line">    keyboard.press(Key.enter)</span><br><span class="line">    keyboard.release(Key.enter)</span><br></pre></td></tr></table></figure>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bd4e201ddac507cc46b3eb.png" alt="这里由衷感谢ljx同志的大力支持与配合" loading="lazy" />
+      <figcaption>这里由衷感谢ljx同志的大力支持与配合</figcaption>
+    </figure>
+  
+
+<p>这个不大好演示，我还没有找到一个很好的视频托管平台，等我找到了会把演示视频补上。</p>
+<p>三年属实太长了，东西做了很多只是少数发到了朋友圈和动态，很多东西我都没有演示，这两三天内我差中选优，多做几期，纪念，歌颂我平凡的爱好。</p>
 
       </section>
 
@@ -269,7 +314,7 @@
       
     </div>
      
-    <p>&copy; 2023 <a href="/" target="_blank">JorryJo</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">cxy</a></p>
 
     
 
@@ -325,41 +370,6 @@
 
 
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.4.8/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.27.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 <!-- copy button  -->
