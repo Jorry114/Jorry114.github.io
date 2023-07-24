@@ -22,7 +22,7 @@
 
   
 
-  <title>能不能给我一首歌的时间 | JorryJo</title>
+  <title>把故事听到最后才说再见 | JorryJo</title>
 
   
 
@@ -102,16 +102,16 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">能不能给我一首歌的时间</h1>
+          <h1 class="title-wrap">把故事听到最后才说再见</h1>
           <h2 class="title-sub-wrap">
             <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-23T12:40:35.000Z" itemprop="datePublished">2023-07-23</time>
+            <time  class="article-date" datetime="2023-07-24T12:56:13.000Z" itemprop="datePublished">2023-07-24</time>
           </h2>
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-07-24T13:55:04.897Z" itemprop="dateUpdated">2023-07-24</time>
+              <time  class="article-updated" datetime="2023-07-24T16:00:43.083Z" itemprop="dateUpdated">2023-07-25</time>
             </h2>
           
           
@@ -142,47 +142,36 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="aplayer-box" data-url='https://www.joy127.com/url/106234.mp3' data-name='单车' data-artist='陈奕迅' data-cover='https://pic.imgdb.cn/item/64bd20b91ddac507ccb40821.webp' ></div>
-<h1 id="一些稍微有用的项目"><a href="#一些稍微有用的项目" class="headerlink" title="一些稍微有用的项目"></a>一些稍微有用的项目</h1><h3 id="全自动二次函数解析-图像生成"><a href="#全自动二次函数解析-图像生成" class="headerlink" title="全自动二次函数解析&amp;图像生成"></a>全自动二次函数解析&amp;图像生成</h3><p>顾名思义，就是一个能够根据你输入的一次项，二次项系数和常数项生成相对应的解析（delta，与x轴的交点），并生成图像。<br>其实就是把abc三个值换成了变量，没多大难度。</p>
+        <div class="aplayer-box" data-url='https://www.joy127.com/url/106256.mp3' data-name='修炼爱情' data-artist='林俊杰' data-cover='https://pic.imgdb.cn/item/64be748a1ddac507ccd84d60.webp' ></div>
+<p><strong>rqの爱歌.</strong></p>
+<h1 id="一些稍微有用的项目（2）"><a href="#一些稍微有用的项目（2）" class="headerlink" title="一些稍微有用的项目（2）"></a>一些稍微有用的项目（2）</h1><h3 id="1-视频转字符画"><a href="#1-视频转字符画" class="headerlink" title="1.视频转字符画"></a>1.视频转字符画</h3><p>这个半抄半写，效果一级<br>需要opencv库，os库是python自带。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;mqpka89045321@#$%^&amp;*()_=||||&#125;&#x27;</span>    <span class="comment"># 字符表</span></span><br><span class="line">video = cv2.VideoCapture(<span class="string">&#x27;1.mp4&#x27;</span>)     <span class="comment"># 读取视频</span></span><br><span class="line">ret, frame = video.read()    <span class="comment"># 读取帧</span></span><br><span class="line"><span class="keyword">while</span> ret:    <span class="comment"># 逐帧读取</span></span><br><span class="line">    str_img = <span class="string">&#x27;&#x27;</span>    <span class="comment"># 字符画</span></span><br><span class="line">    grey = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)    <span class="comment"># 灰度转换</span></span><br><span class="line">    grey = cv2.resize(grey, (<span class="number">300</span>, <span class="number">120</span>))    <span class="comment"># 该表大小</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> grey:    <span class="comment"># 遍历每个像素点</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">            index = <span class="built_in">int</span>(j / <span class="number">256</span> * <span class="built_in">len</span>(<span class="built_in">str</span>))    <span class="comment"># 获取字符坐标</span></span><br><span class="line">            str_img += <span class="built_in">str</span>[index]    <span class="comment"># 将字符添加到字符画中</span></span><br><span class="line">        str_img += <span class="string">&#x27;\n&#x27;</span></span><br><span class="line">    os.system(<span class="string">&#x27;cls&#x27;</span>)    <span class="comment"># 清除上一帧输出的内容</span></span><br><span class="line">    <span class="built_in">print</span>(str_img)    <span class="comment"># 输出字符画</span></span><br><span class="line">    ret, frame = video.read()    <span class="comment"># 读取下一帧</span></span><br><span class="line">    cv2.waitKey(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>就是把视频的每一帧都进当成图片进行处理，然后拼接到一起。</p>
 
     <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bd2de41ddac507cce0d03b.png" alt="大致的效果" loading="lazy" />
-      <figcaption>大致的效果</figcaption>
-    </figure>
-  
-<p>具体的代码实现（少数的我写了注释的代码），需要matplotlib，numpy这两个库，22年写的应该是。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">import math</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [&#x27;SimHei&#x27;]  # 用来正常显示中文标签</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False  # 用来正常显示负号</span><br><span class="line">x = np.arange(-10, 10, 0.1)</span><br><span class="line">A = int(input(&#x27;二次项系数&#x27;))</span><br><span class="line">B = int(input(&#x27;一次项系数&#x27;))</span><br><span class="line">C = int(input(&#x27;常数项&#x27;))</span><br><span class="line"># 查成分</span><br><span class="line">if A &lt; 0:</span><br><span class="line">    print(&quot;开口向下&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;开口向上&quot;)</span><br><span class="line">DingX = B/-2*A</span><br><span class="line">DingY = 4*A*C - B * B / 4 * A</span><br><span class="line"># 画出成分</span><br><span class="line">print(DingX, DingY)</span><br><span class="line">y = A * x * x + B * x + C</span><br><span class="line">plt.xlabel(&#x27;x&#x27;)</span><br><span class="line">plt.ylabel(&#x27;y&#x27;)</span><br><span class="line">plt.title(&quot;一元二次函数&quot;)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片转彩色字符画"><a href="#图片转彩色字符画" class="headerlink" title="图片转彩色字符画"></a>图片转彩色字符画</h3><p>说实话我自己也没绷住，这个属于是最没用的<br>灰白的尚且有些意义，加了彩色是脱裤子放屁。</p>
-
-    <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bd30a01ddac507cce8a6cc.png" alt="原图我觉得不用放了，一眼仙贝" loading="lazy" />
-      <figcaption>原图我觉得不用放了，一眼仙贝</figcaption>
-    </figure>
-  
-<p>代码实现，需要opencv这个库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">charSize = <span class="number">2</span>  <span class="comment"># 字符尺寸</span></span><br><span class="line"></span><br><span class="line">string = <span class="string">&quot;随便&#x27;&quot;</span></span><br><span class="line">count = <span class="built_in">len</span>(string)</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;3.jpg&#x27;</span>)</span><br><span class="line">u, v, _ = img.shape</span><br><span class="line">c = img*<span class="number">0</span> + <span class="number">255</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, u, <span class="number">6</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, v, <span class="number">6</span>):</span><br><span class="line">        pix = gray[i, j]</span><br><span class="line">        b, g, r = img[i, j]</span><br><span class="line">        zifu = string[<span class="built_in">int</span>(((count - <span class="number">1</span>) * pix) / <span class="number">256</span>)]</span><br><span class="line">        cv2.putText(c, zifu, (j, i), cv2.FONT_HERSHEY_COMPLEX,</span><br><span class="line">                    charSize, (<span class="built_in">int</span>(b), <span class="built_in">int</span>(g), <span class="built_in">int</span>(r)), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;output.png&#x27;</span>, c)</span><br></pre></td></tr></table></figure>
-<h3 id="素描化图片"><a href="#素描化图片" class="headerlink" title="素描化图片"></a>素描化图片</h3><p>这个效果好，做遗照相当合适（</p>
-
-    <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bd45b61ddac507cc2dd0d4.jpg" alt="渲染花了0.114514s" loading="lazy" />
-      <figcaption>渲染花了0.114514s</figcaption>
-    </figure>
-  
-<p>代码实现<br>需要pillow，numpy两个库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.asarray(Image.<span class="built_in">open</span>(<span class="string">&quot;3.jpg&quot;</span>).convert(<span class="string">&quot;L&quot;</span>)).astype(<span class="string">&quot;float&quot;</span>)</span><br><span class="line">depth=<span class="number">10</span><span class="comment">#深度的范围为0~100，我们先取10这个数</span></span><br><span class="line">grad = np.gradient(a) <span class="comment">#取图像灰度的梯度值，有两个</span></span><br><span class="line">grad_x, grad_y = grad               <span class="comment">#分别取横纵图像梯度值</span></span><br><span class="line"><span class="comment">#将高度融入纵横梯度当中，也可以理解让梯度变化不那么明显</span></span><br><span class="line">grad_x = grad_x*depth/<span class="number">100.</span></span><br><span class="line">grad_y = grad_y*depth/<span class="number">100.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">A = np.sqrt(grad_x**<span class="number">2</span> + grad_y**<span class="number">2</span> + <span class="number">1.</span>)</span><br><span class="line">uni_x = grad_x/A</span><br><span class="line">uni_y = grad_y/A</span><br><span class="line">uni_z = <span class="number">1.</span>/A</span><br><span class="line"><span class="comment">#设定了一个光源点，知道角度，来算出单位的x,y,z的长度</span></span><br><span class="line">vec_el = np.pi/<span class="number">2.2</span>                   <span class="comment"># 光源的俯视角度，弧度值</span></span><br><span class="line">vec_az = np.pi/<span class="number">4.</span>                    <span class="comment"># 光源的方位角度，弧度值</span></span><br><span class="line">dx = np.cos(vec_el)*np.cos(vec_az)   <span class="comment">#光源对x 轴的影响</span></span><br><span class="line">dy = np.cos(vec_el)*np.sin(vec_az)   <span class="comment">#光源对y 轴的影响</span></span><br><span class="line">dz = np.sin(vec_el)              <span class="comment">#光源对z 轴的影响</span></span><br><span class="line"><span class="comment">#光源归一化</span></span><br><span class="line">b = <span class="number">255</span>*(dx*uni_x + dy*uni_y + dz*uni_z)   </span><br><span class="line">b = b.clip(<span class="number">0</span>,<span class="number">255</span>)</span><br><span class="line"> </span><br><span class="line">im = Image.fromarray(b.astype(<span class="string">&#x27;uint8&#x27;</span>))  <span class="comment">#重构图像</span></span><br><span class="line">im.save(<span class="string">&#x27;6sav.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="QQ信息轰炸"><a href="#QQ信息轰炸" class="headerlink" title="QQ信息轰炸"></a>QQ信息轰炸</h3><p>看名字就知道了，需要pynput这个库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynput.mouse <span class="keyword">import</span> Button, Controller <span class="keyword">as</span> mouse_Controller</span><br><span class="line"><span class="keyword">from</span> pynput.keyboard <span class="keyword">import</span> Key, Controller <span class="keyword">as</span> key_Controller</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br><span class="line">mouse = mouse_Controller()  <span class="comment"># 控制鼠标</span></span><br><span class="line">keyboard = key_Controller()</span><br><span class="line">mouse.press(Button.left)  <span class="comment"># 按住鼠标左键</span></span><br><span class="line">mouse.release(Button.left)  <span class="comment"># 松开鼠标左键</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>):  <span class="comment">#总共发多少次</span></span><br><span class="line">    time.sleep(<span class="number">0.1</span>) <span class="comment">#消息发送间隔时间</span></span><br><span class="line">    keyboard.<span class="built_in">type</span>(<span class="string">&#x27;cnm&#x27;</span>)  <span class="comment">#发送的消息内容,不一定要c他m</span></span><br><span class="line">    keyboard.press(Key.enter)</span><br><span class="line">    keyboard.release(Key.enter)</span><br></pre></td></tr></table></figure>
-
-    <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bd4e201ddac507cc46b3eb.png" alt="这里由衷感谢ljx同志的大力支持与配合" loading="lazy" />
-      <figcaption>这里由衷感谢ljx同志的大力支持与配合</figcaption>
+      <img src="https://pic.imgdb.cn/item/64be83a31ddac507cc09ef5d.png" alt="大致效果" loading="lazy" />
+      <figcaption>大致效果</figcaption>
     </figure>
   
 
-<p>这个不大好演示，我还没有找到一个很好的视频托管平台，等我找到了会把演示视频补上。</p>
-<p>三年属实太长了，东西做了很多只是少数发到了朋友圈和动态，很多东西我都没有演示，这两三天内我差中选优，多做几期，纪念，歌颂我平凡的爱好。</p>
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64be83a31ddac507cc09f003.png" alt="素材选自水门和带土的决战" loading="lazy" />
+      <figcaption>素材选自水门和带土的决战</figcaption>
+    </figure>
+  
+<h3 id="2-文本转语音"><a href="#2-文本转语音" class="headerlink" title="2.文本转语音"></a>2.文本转语音</h3><p>需要pyttsx3<br>默认好像是女声</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyttsx3</span><br><span class="line"> </span><br><span class="line">say = pyttsx3.init()        <span class="comment"># 创建pyttsx对象，并初始化对象</span></span><br><span class="line"> </span><br><span class="line">msg = <span class="string">&#x27;&#x27;&#x27;我测你们妈&#x27;&#x27;&#x27;</span>    <span class="comment"># 需要合成的文字</span></span><br><span class="line"> </span><br><span class="line">say.say(msg)        <span class="comment"># 合成并播放语音</span></span><br><span class="line">say.runAndWait()    <span class="comment"># 等待语音播放完</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="准确的预测你的身高（doge）"><a href="#准确的预测你的身高（doge）" class="headerlink" title="准确的预测你的身高（doge）"></a>准确的预测你的身高（doge）</h3><p>只要你诚实，就肯定不会出差错。</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64be9e941ddac507cc6244ca.png" alt="" loading="lazy" />
+      <figcaption></figcaption>
+    </figure>
+  
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入您的身高:&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在收入信息至云端&quot;</span>)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;请按下.来继续您的操作&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在计算&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;经过严密计算&quot;</span>)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;结果已经计算完毕，请输入.来继续操作&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;您的身高是:&quot;</span>,a,<span class="string">&quot;cm&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>写不下去了，python快把我折磨疯了，换了电脑一半的代码都要重写，老代码换个新环境就不能运行了，python纯小公主语言。</p>
 
       </section>
 
@@ -190,28 +179,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/07/24/%E6%8A%8A%E6%95%85%E4%BA%8B%E5%90%AC%E5%88%B0%E6%9C%80%E5%90%8E%E6%89%8D%E8%AF%B4%E5%86%8D%E8%A7%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">把故事听到最后才说再见</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/07/20/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEneovim-%E4%B8%80%E6%AC%BE%E7%A5%9E%E4%B9%8B%E7%BC%96%E8%BE%91%E5%99%A8/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">从0开始配置neovim--一款神之编辑器</h2>
+        <a href="/2023/07/23/%E8%83%BD%E4%B8%8D%E8%83%BD%E7%BB%99%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%97%B6%E9%97%B4/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">能不能给我一首歌的时间</h2>
         </a>
       
       <div class="card-text--row">Older</div>
