@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="cxy">
+  
+
+  
+
+  
+
+  <title>昨天没写完的部分 | JorryJo</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://w.wallhaven.cc/full/j5/wallhaven-j5x8ky.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          JorryJo
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://space.bilibili.com/282574159?spm_id_from=333.1007.0.0">B站</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://gitee.com/jorryjo">gitee</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">昨天没写完的部分</h1>
+          <h2 class="title-sub-wrap">
+            <strong>cxy</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2023-07-25T13:16:37.000Z" itemprop="datePublished">2023-07-25</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <div class="aplayer-box" data-url='https://www.joy127.com/url/106289.mp3' data-name='Blueming' data-artist='IU' data-cover='https://pic.imgdb.cn/item/64bfcc681ddac507cc5b2f5b.webp' ></div>
+<p>谁选的我不多说，懂的都懂。</p>
+<p><em><strong>昨天因为我python的环境有些冲突，很多都没有跑起来，今天折腾半天，最后用conda建立虚拟环境，大部分都可以了，我把昨天应该写的补上，应该做完今天的就差不多没了。</strong></em></p>
+<h2 id="颜值打分"><a href="#颜值打分" class="headerlink" title="颜值打分"></a>颜值打分</h2><p>这个做了挺久的，半抄半写，效果不算好，我认为应该是越白分数越高，我也不清楚opencv这个模型是拿什么练的，测了一下，彭于晏没pzm帅😋</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bfcc4f1ddac507cc5b0856.png" alt="莱昂纳多那肯定得一伯分" loading="lazy" />
+      <figcaption>莱昂纳多那肯定得一伯分</figcaption>
+    </figure>
+  
+<p>代码实现，要有一个文件叫haarcascade_frontalface_default.xml，训练模型，这个应该是在opencv里有。<br>需要的库有：ybc_face,numpy,opencv,tkinter</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> ybc_face <span class="keyword">as</span> face</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&quot;haarcascade_frontalface_default.xml&quot;</span>)</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;img/jcw.jpg&#x27;</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(faces)</span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;result.png&#x27;</span>,img)</span><br><span class="line"></span><br><span class="line">res = face.info(<span class="string">&#x27;result.png&#x27;</span>)</span><br><span class="line"></span><br><span class="line">imageLabel_win = tk.Tk()</span><br><span class="line">photo = tk.PhotoImage(file=<span class="string">&#x27;result.png&#x27;</span>)</span><br><span class="line">imageLabel_win = tk.Label(imageLabel_win,image=photo)</span><br><span class="line">imageLabel_win.pack(side=tk.LEFT)</span><br><span class="line">imageLabel_win.mainloop()</span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片油画效果"><a href="#图片油画效果" class="headerlink" title="图片油画效果"></a>图片油画效果</h2><p>还是opencv，opencv真图像处理界の绝对王者</p>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bfdb0f1ddac507cc75115f.png" alt="原图" loading="lazy" />
+      <figcaption>原图</figcaption>
+    </figure>
+  
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bfdb421ddac507cc756517.jpg" alt="处理之后" loading="lazy" />
+      <figcaption>处理之后</figcaption>
+    </figure>
+  
+<p>这个模糊程度得自行根据图片的清晰程度调整，直接照抄不好使，文件切记不能太大，否则动辄几十上百兆。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;5.png&#x27;</span>)</span><br><span class="line">res = cv2.xphoto.oilPainting(img, <span class="number">4</span>, <span class="number">1</span>)  <span class="comment"># 4往上就是越来越模糊，往下就是越来越清晰.</span></span><br><span class="line"><span class="comment">#cv2.imshow(&#x27;result&#x27;, res)</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;result1.jpg&#x27;</span>,res)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="文字填充图片像素"><a href="#文字填充图片像素" class="headerlink" title="文字填充图片像素"></a>文字填充图片像素</h2><p>就是把图片里的像素用文字覆盖，改自b站一位up的项目，<a target="_blank" rel="noopener" href="https://github.com/3150601355/PictureOfText">原项目地址</a>。<br>主要是把import那一块改了，我觉得没啥必要这样写，直接import更方便，当然那位up可能是为了方便纯路人。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CHILD_W = CHILD_H = <span class="number">16</span>                                      <span class="comment"># 子图的尺寸，宽和高都是16像素</span></span><br><span class="line">txt = <span class="string">&#x27;我惠美如画中仙&#x27;</span>                                      <span class="comment"># 输出内容</span></span><br><span class="line">font = ImageFont.truetype(<span class="string">&#x27;AliPuHui-Bold.ttf&#x27;</span>, CHILD_W)     <span class="comment"># 字体及大小,选用粗体字体效果更好</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    imgSrc = Image.<span class="built_in">open</span>(sys.argv[<span class="number">1</span>])                       <span class="comment"># 打开源图像</span></span><br><span class="line">    w, h = imgSrc.size                                      <span class="comment"># 源图像宽和高</span></span><br><span class="line">    </span><br><span class="line">    imgChild = Image.new(<span class="string">&quot;RGB&quot;</span>, (CHILD_W, CHILD_H))         <span class="comment"># 新建子图</span></span><br><span class="line">    imgDst = Image.new(<span class="string">&quot;RGB&quot;</span>, (CHILD_W*w, CHILD_H*h) )      <span class="comment"># 创建目标图像的空图，待填充</span></span><br><span class="line"></span><br><span class="line">    textW, textH = font.getsize(<span class="string">&quot;迷&quot;</span>)                       <span class="comment"># 取得单个文字的宽、高信息</span></span><br><span class="line">    offsetX = (CHILD_W - textW) &gt;&gt; <span class="number">1</span>                        <span class="comment"># 文字水平居中绘制</span></span><br><span class="line">    offsetY = (CHILD_H - textH) &gt;&gt; <span class="number">1</span>                        <span class="comment"># 文字垂直居中绘制</span></span><br><span class="line"></span><br><span class="line">    charIndex = <span class="number">0</span>                                           <span class="comment"># 序号，代表当前绘制哪个汉字</span></span><br><span class="line">    draw = ImageDraw.Draw(imgChild)                         <span class="comment"># 取得小图的绘图对象，用于绘制文字</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;开始处理图片...&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">            draw.rectangle( (<span class="number">0</span>, <span class="number">0</span>, CHILD_W, CHILD_H), fill = <span class="string">&#x27;lightgray&#x27;</span> )  <span class="comment"># 灰色背景效果比外色略好</span></span><br><span class="line"></span><br><span class="line">            draw.text( (offsetX, offsetY), txt[charIndex], font = font, fill = imgSrc.getpixel((x, y)) )</span><br><span class="line">            </span><br><span class="line">            imgDst.paste(imgChild, (x*CHILD_W, y*CHILD_H))  <span class="comment"># 把绘制好的子图填到imgDst里</span></span><br><span class="line">            </span><br><span class="line">            charIndex += <span class="number">1</span>                                  <span class="comment"># 序号加1，从而依次绘制每个字</span></span><br><span class="line">            <span class="keyword">if</span> charIndex == <span class="built_in">len</span>(txt):                       <span class="comment"># 循环绘制</span></span><br><span class="line">                charIndex = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    imgDst.save(sys.argv[<span class="number">2</span>])                                <span class="comment"># 保存图片</span></span><br></pre></td></tr></table></figure>
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bfe2921ddac507cc8154a4.png" alt="文件实在是太大了，传不上去" loading="lazy" />
+      <figcaption>文件实在是太大了，传不上去</figcaption>
+    </figure>
+  
+
+    <figure class="figure-image">
+      <img src="https://pic.imgdb.cn/item/64bfe2d71ddac507cc81d05c.png" alt="只能这么看看" loading="lazy" />
+      <figcaption>只能这么看看</figcaption>
+    </figure>
+  
+
+<h2 id="猜数游戏"><a href="#猜数游戏" class="headerlink" title="猜数游戏"></a>猜数游戏</h2><p>python写累了，写个rust。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::io;</span><br><span class="line"><span class="keyword">use</span> rand::Rng;</span><br><span class="line"><span class="keyword">use</span> std::cmp::Ordering;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Guess a number!&quot;</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">secret_number</span> = rand::<span class="title function_ invoke__">thread_rng</span>().<span class="title function_ invoke__">gen_range</span>(<span class="number">1</span>,<span class="number">100</span>);</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;The number is &#123;&#125;&quot;</span>,secret_number);</span><br><span class="line"><span class="keyword">loop</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">guess</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line"></span><br><span class="line">    io::<span class="title function_ invoke__">stdin</span>().<span class="title function_ invoke__">read_line</span>(&amp;<span class="keyword">mut</span> guess).<span class="title function_ invoke__">expect</span>(<span class="string">&quot;Can&#x27;t read&quot;</span>);</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;The number that you write is : &#123;&#125;&quot;</span>,guess);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">guess</span>:<span class="type">u32</span> = <span class="keyword">match</span> guess.<span class="title function_ invoke__">trim</span>().<span class="title function_ invoke__">parse</span>()&#123;</span><br><span class="line">            <span class="title function_ invoke__">Ok</span>(num) =&gt; num,</span><br><span class="line">            <span class="title function_ invoke__">Err</span>(_) =&gt; <span class="keyword">continue</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">:</span><br><span class="line">    matc Eguess.<span class="title function_ invoke__">cmp</span>(&amp;secret_number)&#123;</span><br><span class="line">        Ordering::Less =&gt; <span class="built_in">println!</span>(<span class="string">&quot;Too small!!&quot;</span>),</span><br><span class="line">        Ordering::Greater =&gt; <span class="built_in">println!</span>(<span class="string">&quot;Too big&quot;</span>),</span><br><span class="line">        Ordering::Equal =&gt; &#123;</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;You win!&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>随机给一个数（1~100），然后让你凭空猜，上的rust课里有讲这个，没什么好写了就放出来了。</p>
+<h3 id="这算是写完了，换了电脑很多不太好的项目被当时的我狠狠地删除了，留下来了寥寥几个能写的，我当时是否真正的认真挑选了我没有确定的依据，就当是把过错都丢弃了，就好像我寄希望于杀死明月的太阳，带来阳光的同时抹去了人们在恐惧中发明的火种，我忏悔我当时的鲁莽，我真他妈该死啊。"><a href="#这算是写完了，换了电脑很多不太好的项目被当时的我狠狠地删除了，留下来了寥寥几个能写的，我当时是否真正的认真挑选了我没有确定的依据，就当是把过错都丢弃了，就好像我寄希望于杀死明月的太阳，带来阳光的同时抹去了人们在恐惧中发明的火种，我忏悔我当时的鲁莽，我真他妈该死啊。" class="headerlink" title="这算是写完了，换了电脑很多不太好的项目被当时的我狠狠地删除了，留下来了寥寥几个能写的，我当时是否真正的认真挑选了我没有确定的依据，就当是把过错都丢弃了，就好像我寄希望于杀死明月的太阳，带来阳光的同时抹去了人们在恐惧中发明的火种，我忏悔我当时的鲁莽，我真他妈该死啊。"></a>这算是写完了，换了电脑很多不太好的项目被当时的我狠狠地删除了，留下来了寥寥几个能写的，我当时是否真正的认真挑选了我没有确定的依据，就当是把过错都丢弃了，就好像我寄希望于杀死明月的太阳，带来阳光的同时抹去了人们在恐惧中发明的火种，我忏悔我当时的鲁莽，我真他妈该死啊。</h3>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2023/07/24/%E6%8A%8A%E6%95%85%E4%BA%8B%E5%90%AC%E5%88%B0%E6%9C%80%E5%90%8E%E6%89%8D%E8%AF%B4%E5%86%8D%E8%A7%81/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">把故事听到最后才说再见</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://n.sinaimg.cn/spider2019124/200/w500h500/20191204/5aef-ikhvemx8467924.jpg" class="soft-size--round soft-style--box" alt="Cxy">
+    
+    
+      <h2>Cxy</h2>
+    
+    
+      <p>星斗其文，赤子其人</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>5</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        1
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/neovim/" style="font-size: 10px;" class="tags-cloud-0">neovim</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/Jorry114/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2023 <a href="/" target="_blank">cxy</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer-box");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let params = {
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        }
+        if (el.dataset.lrc) {
+          params['lrcType'] = 3
+        }
+        new APlayer(params);
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
