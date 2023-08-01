@@ -111,7 +111,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-07-28T12:33:02.235Z" itemprop="dateUpdated">2023-07-28</time>
+              <time  class="article-updated" datetime="2023-08-01T02:29:12.903Z" itemprop="dateUpdated">2023-08-01</time>
             </h2>
           
           
@@ -176,12 +176,7 @@
 
 <h3 id="QQ信息轰炸"><a href="#QQ信息轰炸" class="headerlink" title="QQ信息轰炸"></a>QQ信息轰炸</h3><p>看名字就知道了，需要pynput这个库</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynput.mouse <span class="keyword">import</span> Button, Controller <span class="keyword">as</span> mouse_Controller</span><br><span class="line"><span class="keyword">from</span> pynput.keyboard <span class="keyword">import</span> Key, Controller <span class="keyword">as</span> key_Controller</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br><span class="line">mouse = mouse_Controller()  <span class="comment"># 控制鼠标</span></span><br><span class="line">keyboard = key_Controller()</span><br><span class="line">mouse.press(Button.left)  <span class="comment"># 按住鼠标左键</span></span><br><span class="line">mouse.release(Button.left)  <span class="comment"># 松开鼠标左键</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>):  <span class="comment">#总共发多少次</span></span><br><span class="line">    time.sleep(<span class="number">0.1</span>) <span class="comment">#消息发送间隔时间</span></span><br><span class="line">    keyboard.<span class="built_in">type</span>(<span class="string">&#x27;cnm&#x27;</span>)  <span class="comment">#发送的消息内容,不一定要c他m</span></span><br><span class="line">    keyboard.press(Key.enter)</span><br><span class="line">    keyboard.release(Key.enter)</span><br></pre></td></tr></table></figure>
-
-    <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bd4e201ddac507cc46b3eb.png" alt="这里由衷感谢ljx同志的大力支持与配合" loading="lazy" />
-      <figcaption>这里由衷感谢ljx同志的大力支持与配合</figcaption>
-    </figure>
-  
+<div class="dplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/unknown_2023.08.01-10.27.mp4' ></div>
 
 <p>这个不大好演示，我还没有找到一个很好的视频托管平台，等我找到了会把演示视频补上。</p>
 <p>三年属实太长了，东西做了很多只是少数发到了朋友圈和动态，很多东西我都没有演示，这两三天内我差中选优，多做几期，纪念，歌颂我平凡的爱好</p>
@@ -300,7 +295,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/neovim/" style="font-size: 10px;" class="tags-cloud-0">neovim</a> <a href="/tags/%E5%89%AA%E7%82%B9%E4%B8%9C%E8%A5%BF/" style="font-size: 10px;" class="tags-cloud-0">剪点东西</a> <a href="/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/" style="font-size: 20px;" class="tags-cloud-10">朝花夕拾</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%8D%90/" style="font-size: 15px;" class="tags-cloud-5">歌曲推荐</a> <a href="/tags/%E8%AE%B2%E7%82%B9%E8%97%8F%E8%AF%9D/" style="font-size: 10px;" class="tags-cloud-0">讲点藏话</a>
+      <a href="/tags/neovim/" style="font-size: 10px;" class="tags-cloud-0">neovim</a> <a href="/tags/%E5%89%AA%E7%82%B9%E4%B8%9C%E8%A5%BF/" style="font-size: 10px;" class="tags-cloud-0">剪点东西</a> <a href="/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/" style="font-size: 20px;" class="tags-cloud-10">朝花夕拾</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%8D%90/" style="font-size: 20px;" class="tags-cloud-10">歌曲推荐</a> <a href="/tags/%E8%AE%B2%E7%82%B9%E8%97%8F%E8%AF%9D/" style="font-size: 10px;" class="tags-cloud-0">讲点藏话</a>
     </div>
   </div>
 </section>
@@ -386,6 +381,41 @@
 
 
 <!-- dplayer -->
+
+
+<!-- dplayer 视频 start -->
+<script type="text/javascript" src="https://unpkg.com/hls.js@1.4.8/dist/hls.js"></script>
+<script type="text/javascript" src="https://unpkg.com/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer-box");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let pic = el.dataset.pic;
+      let subtitle = el.dataset.subtitle;
+
+      let options = {
+        container: el,
+        video: { url: url, pic: pic },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      }
+
+      if (subtitle) {
+        options.subtitle = {
+          url: el.dataset.subtitle,
+        }
+      }
+      new DPlayer(options);
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
 
 
 <!-- copy button  -->
