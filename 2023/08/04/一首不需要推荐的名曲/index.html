@@ -22,7 +22,7 @@
 
   
 
-  <title>看看混剪 | JorryJo</title>
+  <title>一首不需要推荐的名曲 | JorryJo</title>
 
   
 
@@ -102,11 +102,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">看看混剪</h1>
+          <h1 class="title-wrap">一首不需要推荐的名曲</h1>
           <h2 class="title-sub-wrap">
             <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-30T15:31:18.000Z" itemprop="datePublished">2023-07-30</time>
+            <time  class="article-date" datetime="2023-08-03T23:45:25.000Z" itemprop="datePublished">2023-08-04</time>
           </h2>
           
           
@@ -115,7 +115,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E5%89%AA%E7%82%B9%E4%B8%9C%E8%A5%BF/">🏷️ 剪点东西</a></li>
+    <li><a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%8D%90/">🏷️ 歌曲推荐</a></li>
   
 </ul>
         </div>
@@ -139,7 +139,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="dplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E7%AC%AC%E4%B8%89%E7%89%88.mp4' ></div>
+        <div class="aplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E5%B8%95%E8%B5%AB%E8%B4%9D%E5%B0%94%20%E5%8D%A1%E5%86%9C-%E8%B4%B5%E6%97%8F%E9%9F%B3%E4%B9%90%E5%8F%A4%E5%85%B8.flac' data-cover='http://rylgutqq8.sabkt.gdipper.com/0e105fe2d8666adb5020789395a985191ffb1070.jpg%401000w_1000h_1c.webp' ></div>
 
       </section>
 
@@ -147,28 +147,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/07/31/%E6%88%91%E4%BC%9A%E5%8F%91%E7%9D%80%E5%91%86%EF%BC%8C%E7%84%B6%E5%90%8E%E5%BF%98%E8%AE%B0%E4%BD%A0/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">我会发着呆，然后忘记你~</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/07/30/%E6%94%BE%E9%A6%96%E6%AD%8C%E5%90%AC/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">放首歌听</h2>
+        <a href="/2023/08/04/python%E6%95%99%E7%A8%8B-2-pycharm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">python教程:(2),pycharm使用教程</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -312,42 +298,35 @@
   <!-- aplayer -->
 
 
-<!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.4.8/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.27.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer-box");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let params = {
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          autoplay: false,
+          loop: false,
+          mutex: true,
         }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
+        if (el.dataset.lrc) {
+          params['lrcType'] = 3
+        }
+        new APlayer(params);
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
 
+
+<!-- dplayer -->
 
 
 <!-- copy button  -->
