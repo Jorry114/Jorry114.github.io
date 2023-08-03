@@ -22,7 +22,7 @@
 
   
 
-  <title>把故事听到最后才说再见 | JorryJo</title>
+  <title>Python教程:(1).python环境搭建 | JorryJo</title>
 
   
 
@@ -102,17 +102,12 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">把故事听到最后才说再见</h1>
+          <h1 class="title-wrap">Python教程:(1).python环境搭建</h1>
           <h2 class="title-sub-wrap">
             <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-24T12:56:13.000Z" itemprop="datePublished">2023-07-24</time>
+            <time  class="article-date" datetime="2023-08-03T13:14:09.000Z" itemprop="datePublished">2023-08-03</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-08-01T02:23:53.886Z" itemprop="dateUpdated">2023-08-01</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
@@ -120,7 +115,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/">🏷️ 朝花夕拾</a></li>
+    <li><a href="/tags/%E6%95%99%E7%A8%8B/">🏷️ 教程</a></li>
   
 </ul>
         </div>
@@ -144,64 +139,39 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="aplayer-box" data-url='https://www.joy127.com/url/106256.mp3' data-name='修炼爱情' data-artist='林俊杰' data-cover='https://pic.imgdb.cn/item/64be748a1ddac507ccd84d60.webp' ></div>
-<p><strong>rqの爱歌.</strong></p>
-<h1 id="一些稍微有用的项目（2）"><a href="#一些稍微有用的项目（2）" class="headerlink" title="一些稍微有用的项目（2）"></a>一些稍微有用的项目（2）</h1><h3 id="1-视频转字符画"><a href="#1-视频转字符画" class="headerlink" title="1.视频转字符画"></a>1.视频转字符画</h3><p>这个半抄半写，效果一级<br>需要opencv库，os库是python自带。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;mqpka89045321@#$%^&amp;*()_=||||&#125;&#x27;</span>    <span class="comment"># 字符表</span></span><br><span class="line">video = cv2.VideoCapture(<span class="string">&#x27;1.mp4&#x27;</span>)     <span class="comment"># 读取视频</span></span><br><span class="line">ret, frame = video.read()    <span class="comment"># 读取帧</span></span><br><span class="line"><span class="keyword">while</span> ret:    <span class="comment"># 逐帧读取</span></span><br><span class="line">    str_img = <span class="string">&#x27;&#x27;</span>    <span class="comment"># 字符画</span></span><br><span class="line">    grey = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)    <span class="comment"># 灰度转换</span></span><br><span class="line">    grey = cv2.resize(grey, (<span class="number">300</span>, <span class="number">120</span>))    <span class="comment"># 该表大小</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> grey:    <span class="comment"># 遍历每个像素点</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">            index = <span class="built_in">int</span>(j / <span class="number">256</span> * <span class="built_in">len</span>(<span class="built_in">str</span>))    <span class="comment"># 获取字符坐标</span></span><br><span class="line">            str_img += <span class="built_in">str</span>[index]    <span class="comment"># 将字符添加到字符画中</span></span><br><span class="line">        str_img += <span class="string">&#x27;\n&#x27;</span></span><br><span class="line">    os.system(<span class="string">&#x27;cls&#x27;</span>)    <span class="comment"># 清除上一帧输出的内容</span></span><br><span class="line">    <span class="built_in">print</span>(str_img)    <span class="comment"># 输出字符画</span></span><br><span class="line">    ret, frame = video.read()    <span class="comment"># 读取下一帧</span></span><br><span class="line">    cv2.waitKey(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>就是把视频的每一帧都进当成图片进行处理，然后拼接到一起。</p>
-<div class="dplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/unknown_2023.08.01-09.09.mp4' ></div>
-
-
-<h3 id="2-文本转语音"><a href="#2-文本转语音" class="headerlink" title="2.文本转语音"></a>2.文本转语音</h3><p>需要pyttsx3<br>默认好像是女声</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyttsx3</span><br><span class="line"> </span><br><span class="line">say = pyttsx3.init()        <span class="comment"># 创建pyttsx对象，并初始化对象</span></span><br><span class="line"> </span><br><span class="line">msg = <span class="string">&#x27;&#x27;&#x27;我测你们妈&#x27;&#x27;&#x27;</span>    <span class="comment"># 需要合成的文字</span></span><br><span class="line"> </span><br><span class="line">say.say(msg)        <span class="comment"># 合成并播放语音</span></span><br><span class="line">say.runAndWait()    <span class="comment"># 等待语音播放完</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-准确的预测你的身高（doge）"><a href="#3-准确的预测你的身高（doge）" class="headerlink" title="3.准确的预测你的身高（doge）"></a>3.准确的预测你的身高（doge）</h3><p>只要你诚实，就肯定不会出差错。</p>
+        <div class="aplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E5%AE%89%E9%9D%99.mp3' data-name='安静' data-artist='周杰伦' data-cover='http://rylgutqq8.sabkt.gdipper.com/th.jpg' data-lrc='http://rylgutqq8.sabkt.gdipper.com/%E5%AE%89%E9%9D%99.lrc' data-lrcType='3' ></div>
+<h1 id="Python环境搭建"><a href="#Python环境搭建" class="headerlink" title="Python环境搭建"></a>Python环境搭建</h1><p>python，作为一门面向csdn营销号的编程语言，其上手难度不亚于吃饭，前期的唯一难点就是python的环境搭建，像吃饭一样，要会用筷子，吃饭不会用筷子是不行的，</p>
+<h4 id="首先是下载"><a href="#首先是下载" class="headerlink" title="首先是下载"></a>首先是下载</h4><p><a target="_blank" rel="noopener" href="https://www.python.org/">python官网</a>,在download下找到最新的版本(latest),点击蓝色字体</p>
 
     <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64be9e941ddac507cc6244ca.png" alt="" loading="lazy" />
-      <figcaption></figcaption>
+      <img src="http://rylgutqq8.sabkt.gdipper.com/QQ%E6%88%AA%E5%9B%BE20230803222250.png" alt="不要点错了" loading="lazy" />
+      <figcaption>不要点错了</figcaption>
     </figure>
   
-<p>代码实现，这个真的没有技术含量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入您的身高:&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在收入信息至云端&quot;</span>)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;请按下.来继续您的操作&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在计算&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;经过严密计算&quot;</span>)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;结果已经计算完毕，请输入.来继续操作&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;您的身高是:&quot;</span>,a,<span class="string">&quot;cm&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>写不下去了，python快把我折磨疯了，很多项目换了电脑一半的代码都要重写，能用的不多，我再琢磨琢磨，老代码换个新环境就不能运行了，python纯小公主语言。</p>
-<p>再也不写python了，人生苦短，谁用python谁傻逼。</p>
-<p>你怎么知道我马超有标了？</p>
+<p>打开页面后，往下滑，找到files字样,选择对应的系统版本下载，一般的电脑都是windows64位，可以自行在我的电脑的右键属性中查看，不多赘述。</p>
 
     <figure class="figure-image">
-      <img src="https://pic.imgdb.cn/item/64bea3331ddac507cc70efaa.jpg" alt="你怎么知道我马超有标了？" loading="lazy" />
-      <figcaption>你怎么知道我马超有标了？</figcaption>
+      <img src="http://rylgutqq8.sabkt.gdipper.com/QQ%E6%88%AA%E5%9B%BE20230803221237.png" alt="下载速度慢也得忍着，可以用清华云，但是没有必要，就10mb" loading="lazy" />
+      <figcaption>下载速度慢也得忍着，可以用清华云，但是没有必要，就10mb</figcaption>
     </figure>
   
+<p>然后一直下一步就好了，一般都是默认加入环境变量的。</p>
+<h4 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h4><p>我很想推荐neovim，但是我自己都不咋用，我用pycharm，vscode是最多的，vscode大家都鄙视，说不想在浏览器里写代码，但是有一说一，确实好用，neovim的上手难度太高了。<br>所以这里首先推荐使用pycharm，<a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/pycharm/">官网</a>。<br><img src="http://rylgutqq8.sabkt.gdipper.com/QQ%E6%88%AA%E5%9B%BE20230803224203.png" alt="下载"><br>点击下载之后<br>划到最下方，选择社区免费版进行下载，对于一般的人绝对够用了。<br><img src="http://rylgutqq8.sabkt.gdipper.com/QQ%E6%88%AA%E5%9B%BE20230803224357.png" alt="下载页面"><br>下载之后打开，一路下一步就好了。<br>打开软件之后，照着提示进行操作。<br>这样其实就基本就可以使用了，pycharm能自动识别python解释器，连自行配置解释器的环节都省去了。<br>然后就可以开始写代码了，右上角三角形就是运行，关于这个软件的使用我放到下一个教程里。<br>写多了没人看，点到为止。<br>欲知后事如何，且听下回分解。</p>
+
       </section>
 
       
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/07/25/%E6%98%A8%E5%A4%A9%E6%B2%A1%E5%86%99%E5%AE%8C%E7%9A%84%E9%83%A8%E5%88%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">昨天没写完的部分</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/07/23/%E8%83%BD%E4%B8%8D%E8%83%BD%E7%BB%99%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%97%B6%E9%97%B4/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">能不能给我一首歌的时间</h2>
+        <a href="/2023/08/03/%E5%89%8D%E5%B0%98%E7%A1%AC%E5%8C%96%E5%83%8F%E7%9F%B3%E5%A4%B4-%E9%9A%8F%E7%BC%98%E5%9C%B0%E6%8A%9B%E4%B8%8B%E5%8F%98%E9%80%83%E8%B5%B0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">前尘硬化像石头 随缘地抛下便逃走</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -374,41 +344,6 @@
 
 
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.4.8/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.27.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 <!-- copy button  -->
