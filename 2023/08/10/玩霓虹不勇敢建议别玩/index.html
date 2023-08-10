@@ -22,7 +22,7 @@
 
   
 
-  <title>新老婆 | JorryJo</title>
+  <title>玩霓虹不勇敢建议别玩 | JorryJo</title>
 
   
 
@@ -102,11 +102,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">新老婆</h1>
+          <h1 class="title-wrap">玩霓虹不勇敢建议别玩</h1>
           <h2 class="title-sub-wrap">
             <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-08-07T15:18:13.000Z" itemprop="datePublished">2023-08-07</time>
+            <time  class="article-date" datetime="2023-08-10T13:35:09.000Z" itemprop="datePublished">2023-08-10</time>
           </h2>
           
           
@@ -114,6 +114,8 @@
   
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E5%89%AA%E7%82%B9%E4%B8%9C%E8%A5%BF/">🏷️ 剪点东西</a></li>
   
 </ul>
         </div>
@@ -137,17 +139,14 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
-    <figure class="figure-image">
-      <img src="http://rylgutqq8.sabkt.gdipper.com/fb57d71f1c9881e22ec645ec4a2fdaae.png" alt="卡哇伊内" loading="lazy" />
-      <figcaption>卡哇伊内</figcaption>
-    </figure>
-  
+        <div class="dplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E4%B8%8D%E5%8B%87%E6%95%A2%E5%BB%BA%E8%AE%AE%E4%B8%8D%E7%8E%A9%E9%9C%93%E8%99%B9.mp4' ></div>
+
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -156,21 +155,6 @@
       
         <a href="/2023/08/09/%E7%9C%9F%E7%9A%84%E7%88%B1%E4%BD%A0/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">真的爱你</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/08/07/%E6%9C%80%E7%87%83%E7%9A%84%E4%B8%80%E9%9B%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">最燃的一集</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -315,6 +299,41 @@
 
 
 <!-- dplayer -->
+
+
+<!-- dplayer 视频 start -->
+<script type="text/javascript" src="https://unpkg.com/hls.js@1.4.8/dist/hls.js"></script>
+<script type="text/javascript" src="https://unpkg.com/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer-box");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let pic = el.dataset.pic;
+      let subtitle = el.dataset.subtitle;
+
+      let options = {
+        container: el,
+        video: { url: url, pic: pic },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      }
+
+      if (subtitle) {
+        options.subtitle = {
+          url: el.dataset.subtitle,
+        }
+      }
+      new DPlayer(options);
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
 
 
 <!-- copy button  -->
