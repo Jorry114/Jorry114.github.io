@@ -22,7 +22,7 @@
 
   
 
-  <title>好听，爱听 | JorryJo</title>
+  <title>在hexo中添加giscus评论的踩坑过程 | JorryJo</title>
 
   
 
@@ -51,7 +51,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(http://rylgutqq8.sabkt.gdipper.com/20509557656b9852a7fef52d9337263e104040d8.jpg%401000w_1000h_1c.webp)"></div>
+    <div class="post-image" style="background-image: url(http://rylgutqq8.sabkt.gdipper.com/b8014a90f603738d6b3e0520bb1bb051f819ecb8.webp)"></div>
   
 
   <!-- navbar -->
@@ -102,25 +102,22 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">好听，爱听</h1>
+          <h1 class="title-wrap">在hexo中添加giscus评论的踩坑过程</h1>
           <h2 class="title-sub-wrap">
             <strong>cxy</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-27T02:08:53.000Z" itemprop="datePublished">2023-07-27</time>
+            <time  class="article-date" datetime="2023-08-15T04:44:51.000Z" itemprop="datePublished">2023-08-15</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-08-12T16:02:07.999Z" itemprop="dateUpdated">2023-08-13</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Doc/">📒 Doc</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%8D%90/">🏷️ 歌曲推荐</a></li>
+    <li><a href="/tags/%E6%95%99%E7%A8%8B/">🏷️ 教程</a></li>
   
 </ul>
         </div>
@@ -144,8 +141,13 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="aplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%EB%9A%9C%EB%91%90%EB%9A%9C%EB%91%90%20%28DDU-DU%20DDU-DU%29-BLACKPINK.320.mp3' data-name='DDU-DU DDU-DU' data-artist='BLACKPINK' data-cover='http://rylgutqq8.sabkt.gdipper.com/20509557656b9852a7fef52d9337263e104040d8.jpg%401000w_1000h_1c.webp' data-lrc='http://rylgutqq8.sabkt.gdipper.com/%EB%9A%9C%EB%91%90%EB%9A%9C%EB%91%90%20%28DDU-DU%20DDU-DU%29%20-%20BLACKPINK.lrc' data-lrcType='3' ></div>
-<p>炜👨‍🦳点名要听。<br>确实挺不错的。</p>
+        <div class="aplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E7%A7%A6%E5%B2%9A%20-%20%E9%BB%84%E6%98%8F%E4%B9%8B%E6%97%B6%EF%BC%88%E9%92%A2%E7%90%B4%E7%89%88%EF%BC%89.mp3' data-name='黄昏之时（钢琴版）' data-artist='秦岚' data-cover='http://rylgutqq8.sabkt.gdipper.com/b8014a90f603738d6b3e0520bb1bb051f819ecb8.webp' ></div>
+<p>我因为懒一开始就不想自己写，后来发现费的时间更多，基本上把该踩的坑全踩了一遍，我也不多废话我自己的悲惨经历了，我讲讲如何正确的配置giscus评论。</p>
+<p>申请的部分按照csdn和知乎上的几篇教程来是可以的，但是到了本地配置的时候千万不能直接照抄，首先你要在你主题下的config文件里添加这样一些内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">giscus:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">repo:</span>  <span class="comment"># Github repository name</span></span><br><span class="line">  <span class="attr">repo-id:</span>  <span class="comment"># Github repository id</span></span><br><span class="line">  <span class="attr">category:</span>  <span class="comment"># Github discussion category</span></span><br><span class="line">  <span class="attr">category_id:</span>  <span class="comment"># Github discussion category id</span></span><br><span class="line">  <span class="comment"># Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme</span></span><br><span class="line">    <span class="comment"># Available values: pathname | url | title | og:title</span></span><br><span class="line">  <span class="attr">mapping:</span> </span><br><span class="line">  <span class="comment"># Available values: 0 | 1</span></span><br><span class="line">  <span class="attr">reactions-enabled:</span> <span class="number">1</span></span><br><span class="line">   <span class="comment"># Available values: 0 | 1</span></span><br><span class="line">  <span class="attr">emit-metadata:</span> <span class="number">0</span></span><br><span class="line">  <span class="comment"># Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">preferred_color_scheme</span></span><br><span class="line">  <span class="comment"># Available values: en | zh-CN</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-CN</span></span><br><span class="line">  <span class="comment"># Place the comment box above the comments</span></span><br><span class="line">  <span class="attr">input-position:</span> <span class="string">top</span></span><br></pre></td></tr></table></figure>
+<p>之后你要在主题下的layout文件里找到跟评论有关的，一般都是有comments字样的，可能是文件夹也可能是ejs或者其他的文件，按主题来定，找到之后在这添加以下的代码，这个可以在giscus那里找到，每个人的都不一样你复制你自己的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.<span class="property">giscus</span> &amp;&amp; theme.<span class="property">giscus</span>[<span class="string">&#x27;repo&#x27;</span>] &amp;&amp; theme.<span class="property">giscus</span>[<span class="string">&#x27;repo-id&#x27;</span>]) &#123; %&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;giscus&quot;</span> <span class="attr">class</span>=<span class="string">&quot;giscus&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-repo</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-repo-id</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-category</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-category-id</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-mapping</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-strict</span>=<span class="string">&quot;0&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-reactions-enabled</span>=<span class="string">&quot;1&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-emit-metadata</span>=<span class="string">&quot;0&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-input-position</span>=<span class="string">&quot;bottom&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-theme</span>=<span class="string">&quot;preferred_color_scheme&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-lang</span>=<span class="string">&quot;zh-CN&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">async</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>完成之后直接保存生成大概就没什么问题了，这里ejs内的文件内容，逻辑可能会有不一样，有的有判断语句自行选择是加上去还是直接把原配置全部删掉，我是把主体内其他的评论系统全部删掉了直接粘贴这一段代码的，目前没有问题，最后要在主题的config文件里把评论打开就好了。</p>
 
       </section>
 
@@ -153,30 +155,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/07/27/%E8%AE%BAgitee%E5%92%8Cshit%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">论gitee和shit的区别</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://pic.imgdb.cn/item/64bfcc681ddac507cc5b2f5b.webp"></div>
+      <div class="card-cover" background-image-lazy data-img="http://rylgutqq8.sabkt.gdipper.com/QQ%E6%88%AA%E5%9B%BE20230814103500.png"></div>
     
     <div class="card-text">
       
-        <a href="/2023/07/25/%E6%98%A8%E5%A4%A9%E6%B2%A1%E5%86%99%E5%AE%8C%E7%9A%84%E9%83%A8%E5%88%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">昨天没写完的部分</h2>
+        <a href="/2023/08/14/%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E6%8E%A8%E8%8D%90%EF%BC%881%EF%BC%89/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">动态壁纸推荐（1）</h2>
         </a>
       
       <div class="card-text--row">Older</div>
