@@ -121,7 +121,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-08-16T00:55:46.818Z" itemprop="dateUpdated">2023-08-16</time>
+              <time  class="article-updated" datetime="2023-08-16T03:51:38.241Z" itemprop="dateUpdated">2023-08-16</time>
             </h2>
           
           
@@ -159,46 +159,9 @@
         <div class="aplayer-box" data-url='http://rylgutqq8.sabkt.gdipper.com/%E7%A7%A6%E5%B2%9A%20-%20%E9%BB%84%E6%98%8F%E4%B9%8B%E6%97%B6%EF%BC%88%E9%92%A2%E7%90%B4%E7%89%88%EF%BC%89.mp3' data-name='黄昏之时（钢琴版）' data-artist='秦岚' data-cover='http://rylgutqq8.sabkt.gdipper.com/b8014a90f603738d6b3e0520bb1bb051f819ecb8.webp' ></div>
 <p>我因为懒一开始就不想自己写，后来发现费的时间更多，基本上把该踩的坑全踩了一遍，我也不多废话我自己的悲惨经历了，我讲讲如何正确的配置giscus评论。</p>
 <p>申请的部分按照csdn和知乎上的几篇教程来是可以的，但是到了本地配置的时候千万不能直接照抄，首先你要在你主题下的config文件里添加这样一些内容：</p>
-<pre><code class="yaml">giscus:
-  enable: true
-  repo:  # Github repository name
-  repo-id:  # Github repository id
-  category:  # Github discussion category
-  category_id:  # Github discussion category id
-  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
-    # Available values: pathname | url | title | og:title
-  mapping: 
-  # Available values: 0 | 1
-  reactions-enabled: 1
-   # Available values: 0 | 1
-  emit-metadata: 0
-  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
-  theme: preferred_color_scheme
-  # Available values: en | zh-CN
-  lang: zh-CN
-  # Place the comment box above the comments
-  input-position: top
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">giscus:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:  # Github repository name</span><br><span class="line">  repo-id:  # Github repository id</span><br><span class="line">  category:  # Github discussion category</span><br><span class="line">  category_id:  # Github discussion category id</span><br><span class="line">  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme</span><br><span class="line">    # Available values: pathname | url | title | og:title</span><br><span class="line">  mapping: </span><br><span class="line">  # Available values: 0 | 1</span><br><span class="line">  reactions-enabled: 1</span><br><span class="line">   # Available values: 0 | 1</span><br><span class="line">  emit-metadata: 0</span><br><span class="line">  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme</span><br><span class="line">  theme: preferred_color_scheme</span><br><span class="line">  # Available values: en | zh-CN</span><br><span class="line">  lang: zh-CN</span><br><span class="line">  # Place the comment box above the comments</span><br><span class="line">  input-position: top</span><br></pre></td></tr></table></figure>
 <p>之后你要在主题下的layout文件里找到跟评论有关的，一般都是有comments字样的，可能是文件夹也可能是ejs或者其他的文件，按主题来定，找到之后在这添加以下的代码，这个可以在giscus那里找到，每个人的都不一样你复制你自己的。</p>
-<pre><code class="js">&lt;% if (theme.giscus &amp;&amp; theme.giscus[&#39;repo&#39;] &amp;&amp; theme.giscus[&#39;repo-id&#39;]) &#123; %&gt;
-  &lt;div id=&quot;giscus&quot; class=&quot;giscus&quot;&gt;&lt;/div&gt;
-  &lt;script src=&quot;&quot;
-        data-repo=&quot;&quot;
-        data-repo-id=&quot;&quot;
-        data-category=&quot;&quot;
-        data-category-id=&quot;&quot;
-        data-mapping=&quot;&quot;
-        data-strict=&quot;0&quot;
-        data-reactions-enabled=&quot;1&quot;
-        data-emit-metadata=&quot;0&quot;
-        data-input-position=&quot;bottom&quot;
-        data-theme=&quot;preferred_color_scheme&quot;
-        data-lang=&quot;zh-CN&quot;
-        crossorigin=&quot;anonymous&quot;
-        async&gt;
-&lt;/script&gt;
-&lt;% &#125; %&gt;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.<span class="property">giscus</span> &amp;&amp; theme.<span class="property">giscus</span>[<span class="string">&#x27;repo&#x27;</span>] &amp;&amp; theme.<span class="property">giscus</span>[<span class="string">&#x27;repo-id&#x27;</span>]) &#123; %&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;giscus&quot;</span> <span class="attr">class</span>=<span class="string">&quot;giscus&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-repo</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-repo-id</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-category</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-category-id</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-mapping</span>=<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-strict</span>=<span class="string">&quot;0&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-reactions-enabled</span>=<span class="string">&quot;1&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-emit-metadata</span>=<span class="string">&quot;0&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-input-position</span>=<span class="string">&quot;bottom&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-theme</span>=<span class="string">&quot;preferred_color_scheme&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-lang</span>=<span class="string">&quot;zh-CN&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">async</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>完成之后直接保存生成大概就没什么问题了，这里ejs内的文件内容，逻辑可能会有不一样，有的有判断语句自行选择是加上去还是直接把原配置全部删掉，我是把主体内其他的评论系统全部删掉了直接粘贴这一段代码的，目前没有问题，最后要在主题的config文件里把评论打开就好了。</p>
 
       </section>
